@@ -1,0 +1,23 @@
+.Burger {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Burger__btn {
+  content: ' ';
+  width: 25px;
+  height: 100%;
+  background-color: transparent;
+  background-image: url("../../../public/img/svg/burger.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .Burger {
+    display: none;
+  }
+}

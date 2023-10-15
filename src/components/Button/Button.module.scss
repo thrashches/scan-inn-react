@@ -1,0 +1,36 @@
+@import "src/stylesheets/layout/module";
+@import "src/stylesheets/typography/module";
+
+.Button {
+  @include br-5;
+  padding: 15px;
+  @include text-normal;
+  font-size: 20px;
+  width: 100%;
+
+  &__aqua {
+    @extend .Button;
+    background: var(--secondaryBlue, #7CE3E1);
+    color: var(--mainBlack, #000000);
+  }
+
+  &__purple {
+    @extend .Button;
+    background: var(--secondaryPurple, #5970FF);
+    color: var(--mainWhite, #ffffff);
+  }
+
+  &__grey {
+    @extend .Button;
+    background: var(--gray, #6f8695);
+    color: var(--mainBlack, #000000);
+  }
+}
+
+@media (min-width: 768px) {
+  .Button:hover {
+      background: var(--secondaryOrange, #ffb64f);
+      color: var(--mainBlack, #000000);
+      transition: 250ms;
+  }
+}

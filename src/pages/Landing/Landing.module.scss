@@ -1,0 +1,150 @@
+@import "src/stylesheets/layout/module";
+@import "src/stylesheets/typography/module";
+
+.Landing {
+  @include container;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.Landing__headSection {
+  @include d-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Landing__headSection__textWrapper {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Landing__headSection__header {
+  color: var(--mainBlack, #000000);
+  font-family: Ferry, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.Landing__headSection__pictureWrapper {
+  z-index: 0;
+  width: 100%;
+  height: auto;
+}
+
+.Landing__headSection__picture {
+  width: 100%;
+  height: auto;
+}
+
+.textRegular {
+  @include text-regular;
+  margin: 20px 0;
+}
+
+.ButtonWrapper {
+  width: 100%;
+}
+
+.Landing__Section {
+  @include container;
+  padding: 20px;
+}
+
+.Man__wrapper {
+  max-width: 1120px;
+  margin: 0 0 0 auto;
+}
+
+.Man__svg {
+  max-width: 100%;
+  max-height: 75vh;
+}
+
+.Carousel {
+  position: unset !important;
+  margin-top: 20px;
+  padding: 20px 0;
+
+  .react-multiple-carousel__arrow {
+    position: absolute;
+  }
+}
+
+.sectionHeader {
+  color: #000;
+  font-family: Ferry, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 0.45px;
+  text-align: left;
+}
+
+.Landing__tariffSection {
+  @include container;
+  padding: 20px;
+  width: 100%;
+}
+
+.Landing__tariffSection__tariffs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 37px;
+}
+
+@media (max-width: 960px) {
+  .Landing__Section {
+    max-width: 95vw;
+  }
+  .Man__wrapper {
+    max-width: 95vw;
+  }
+  .Man__svg {
+    max-width: 250%;
+  }
+}
+
+
+@media (min-width: 960px) {
+  .Landing__headSection {
+    flex-direction: row;
+  }
+
+  .Landing__headSection__textWrapper {
+    width: 70%;
+  }
+
+  .Landing__headSection__header {
+    font-size: 60px;
+  }
+  .Landing__headSection__pictureWrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+  }
+
+  .ButtonWrapper {
+    max-width: 400px;
+  }
+
+  .sectionHeader {
+    font-size: 45px;
+  }
+}
+
+
+

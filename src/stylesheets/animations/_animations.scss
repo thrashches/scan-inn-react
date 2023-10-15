@@ -1,0 +1,7 @@
+@mixin up-5px {
+  transform: translate(0px, -5px);
+}
+
+@mixin scale {
+  transform: scale(1.1);
+}

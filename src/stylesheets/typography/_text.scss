@@ -1,0 +1,67 @@
+@import "../layout/colors";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+@mixin inter-400 {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+@mixin text-normal {
+  @include inter-400;
+  color: var(--mainBlack, #000000);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+@mixin text-secondary {
+  @include text-normal;
+  opacity: 0.4;
+}
+
+.text-blue {
+  color: #6f92c7;
+}
+
+@mixin ta-center {
+  text-align: center;
+}
+
+@mixin ta-right {
+  text-align: right;
+}
+
+@mixin ta-left {
+  text-align: left;
+}
+
+@mixin text-small {
+  font-size: 13px;
+}
+
+@mixin text-regular {
+  @include inter-400;
+  font-size: 20px;
+}
+
+@mixin text-large {
+  font-size: 30px;
+}
+
+@mixin text-giant {
+  font-size: 80px;
+}
+
+.text-center {
+  @include ta-center;
+}
+
+h2 {
+  @include text-large;
+  @include ta-center;
+}

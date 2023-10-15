@@ -1,0 +1,97 @@
+@import "src/stylesheets/typography/module";
+@import "src/stylesheets/layout/module";
+
+.Navbar {
+  @include container;
+  padding: 20px;
+  height: 93px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+}
+
+@mixin logo {
+  display: block;
+  height: 100%;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Navbar__logo {
+  @include logo;
+  background-image: url("/img/png/logo.png");
+}
+
+.Navbar__links {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+    li {
+      a {
+        @include text-normal;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+.Navbar__links__mobile {
+  width: 100%;
+  padding: 50px 20px;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    li {
+      a {
+        @include text-normal;
+        color: var(--mainWhite, #ffffff);
+        text-align: center;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.Navbar__right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Navbar__signin__mobile {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .Navbar__links {
+    display: none;
+  }
+}
