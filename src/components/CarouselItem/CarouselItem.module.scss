@@ -1,3 +1,5 @@
+@import "src/stylesheets/typography/module";
+
 .CarouselItem {
   border-radius: 10px;
   background: #FFF;
@@ -5,4 +7,19 @@
   padding: 20px;
   height: 100%;
   margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+
+  img {
+    height: 56px;
+    width: auto;
+  }
+  p {
+    @include text-regular;
+    font-size: 18px;
+    color: var(--mainBlack, #000000);
+  }
 }
