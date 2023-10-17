@@ -1,0 +1,76 @@
+@import "src/stylesheets/layout/module";
+
+
+.TariffCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+  overflow: hidden;
+}
+
+.TariffCard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.TariffCard__header__title {
+  color: var(--mainBlack, #000000);
+  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.TariffCard__text {
+  color: var(--mainBlack, #000000);
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+.TariffCard__body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 50px;
+}
+
+.TariffCard__body__priceWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.TariffCard__body__price {
+  color: var(--mainBlack, #000000);
+  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3px;
+}
+
+.TariffCard__body__oldPrice {
+  color: var(--mainBlack, #000000);
+  font-family: Inter, sans-serif;
+  opacity: 0.4;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.25px;
+  text-decoration: line-through;
+}

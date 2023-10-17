@@ -8,12 +8,13 @@ import time from "/img/png/carousel/time.png";
 import search from "/img/png/carousel/search.png";
 import guard from "/img/png/carousel/guard.png";
 import {CarouselLeftArrow, CarouselRightArrow} from "../../components/CarouselArrows/CarouselArrows.tsx";
+import {ITariff} from "../../data/types.ts";
+import TariffCard from "../../components/TariffCard/TariffCard.tsx";
 
 
 export default function Landing() {
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 3
         },
@@ -30,6 +31,50 @@ export default function Landing() {
             items: 1
         }
     };
+    const tariffs: ITariff[] = [
+        {
+            name: "Beginner",
+            description: "Для небольшого исследования",
+            price: 799,
+            oldPrice: 1200,
+            creditCondition: "или 150 ₽/мес. при рассрочке на 24 мес.",
+            icon: time,
+            color: "#FFB64F",
+            features: [
+                "Фича 1",
+                "Фича 2",
+                "Фича 3",
+            ]
+        },
+        {
+            name: "Pro",
+            description: "Для HR и фрилансеров",
+            price: 100,
+            oldPrice: 200,
+            creditCondition: "Кредитная условия тарифа 2",
+            icon: search,
+            color: "#7CE3E1",
+            features: [
+                "Фича 1",
+                "Фича 2",
+                "Фича 3",
+            ]
+        },
+        {
+            name: "Business",
+            description: "Для корпоративных клиентов",
+            price: 100,
+            oldPrice: 200,
+            creditCondition: "Кредитная условия тарифа 3",
+            icon: guard,
+            color: "#000000",
+            features: [
+                "Фича 1",
+                "Фича 2",
+                "Фича 3",
+            ]
+        }
+    ]
 
     return <div className={styles.Landing}>
         <section className={styles.Landing__headSection}>
@@ -60,6 +105,8 @@ export default function Landing() {
                 <Carousel
                     responsive={responsive}
                     infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={5000}
                     customLeftArrow={<CarouselLeftArrow/>}
                     customRightArrow={<CarouselRightArrow/>}
                     className={styles.Carousel}>
@@ -85,7 +132,9 @@ export default function Landing() {
         <section className={styles.Landing__tariffSection}>
             <div><h2 className={styles.sectionHeader}>Наши тарифы</h2></div>
             <div className={styles.Landing__tariffSection__tariffs}>
-
+                {tariffs.map((tariff, index) => {
+                    return <TariffCard key={index} tariff={tariff} current={false}/>
+                })}
             </div>
         </section>
     </div>
