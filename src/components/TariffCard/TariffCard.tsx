@@ -17,6 +17,10 @@ const calculateBrightness = (color: string) => {
     return  (r * 299 + g * 587 + b * 114) / 1000;
 };
 
+const CurrentBadge = () => {
+    return <div className={styles.CurrentBadge}>Текущий тариф</div>
+}
+
 export default function TariffCard(props: TariffCardProps) {
     const {tariff, current} = props;
     // console.log(calculateBrightness(tariff.color))
@@ -24,7 +28,8 @@ export default function TariffCard(props: TariffCardProps) {
     return <div
         className={`${styles.TariffCard} ${current && styles.current}`}
         style={{
-            borderColor: current ? tariff.color: "none"
+            borderColor: current ? tariff.color: "none",
+            borderStyle: current ? "solid" : "none",
         }}
     >
         <div className={styles.TariffCard__header}
@@ -43,6 +48,7 @@ export default function TariffCard(props: TariffCardProps) {
         </div>
 
         <div className={styles.TariffCard__body}>
+            {current && <CurrentBadge/>}
             <div>
                 <div className={styles.TariffCard__body__priceWrapper}>
                     <p className={styles.TariffCard__body__price}>{tariff.price} ₽</p>
