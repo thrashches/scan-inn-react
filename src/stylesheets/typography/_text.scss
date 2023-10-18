@@ -9,6 +9,14 @@
   letter-spacing: 0.14px;
 }
 
+@mixin inter-500 {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
 @mixin text-normal {
   @include inter-400;
   color: var(--mainBlack, #000000);

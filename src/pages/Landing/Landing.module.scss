@@ -60,6 +60,7 @@
 .Landing__Section {
   @include container;
   padding: 20px;
+  width: 100%;
 }
 
 .Man__wrapper {
@@ -95,6 +96,9 @@
 
 .Landing__tariffSection {
   @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding: 20px;
   width: 100%;
 }
@@ -114,6 +118,10 @@
   }
   .Man__svg {
     max-width: 250%;
+  }
+
+  .Landing__tariffSection__tariffs {
+    grid-template-columns: 1fr;
   }
 }
 

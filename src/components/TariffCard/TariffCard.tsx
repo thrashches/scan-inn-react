@@ -1,5 +1,6 @@
 import styles from "./TariffCard.module.scss";
 import {ITariff} from "../../data/types.ts";
+import Button from "../Button/Button.tsx";
 
 
 type TariffCardProps = {
@@ -8,8 +9,17 @@ type TariffCardProps = {
 }
 
 
+const calculateBrightness = (color: string) => {
+    const hex = color.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    return  (r * 299 + g * 587 + b * 114) / 1000;
+};
+
 export default function TariffCard(props: TariffCardProps) {
     const {tariff, current} = props;
+    // console.log(calculateBrightness(tariff.color))
 
     return <div
         className={`${styles.TariffCard} ${current && styles.current}`}
@@ -19,7 +29,8 @@ export default function TariffCard(props: TariffCardProps) {
     >
         <div className={styles.TariffCard__header}
             style={{
-                backgroundColor: tariff.color
+                backgroundColor: tariff.color,
+                color: calculateBrightness(tariff.color) > 130 ? "#000000" : "#ffffff"
             }}
         >
             <div>
@@ -27,24 +38,31 @@ export default function TariffCard(props: TariffCardProps) {
                 <p className={styles.TariffCard__text}>{tariff.description}</p>
             </div>
             <div>
-                <img src={tariff.icon} alt={tariff.name}/>
+                <img className={styles.TariffCard__icon} src={tariff.icon} alt={tariff.name}/>
             </div>
         </div>
 
         <div className={styles.TariffCard__body}>
-            <div className={styles.TariffCard__body__priceWrapper}>
-                <p className={styles.TariffCard__body__price}>{tariff.price} ₽</p>
-                <p className={styles.TariffCard__body__oldPrice}>{tariff.oldPrice} ₽</p>
+            <div>
+                <div className={styles.TariffCard__body__priceWrapper}>
+                    <p className={styles.TariffCard__body__price}>{tariff.price} ₽</p>
+                    <p className={styles.TariffCard__body__oldPrice}>{tariff.oldPrice} ₽</p>
+                </div>
+                <div>
+                    <p className={styles.TariffCard__text}>{tariff.creditCondition}</p>
+                </div>
             </div>
             <div>
-                <p className={styles.TariffCard__text}>{tariff.creditCondition}</p>
-            </div>
-            <div>
-                <ul>
+                <p className={styles.featureHeader}>В тариф входит:</p>
+                <ul className={styles.featureList}>
                     {tariff.features.map((feature, index) => (
                         <li key={index}>{feature}</li>
                     ))}
                 </ul>
+            </div>
+            <div className={styles.TariffCard__footer}>
+                <Button text={"Подробнее"} onClick={() => {
+                }} color={"purple"}/>
             </div>
         </div>
     </div>

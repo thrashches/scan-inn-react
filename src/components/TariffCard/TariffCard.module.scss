@@ -1,9 +1,11 @@
 @import "src/stylesheets/layout/module";
+@import "src/stylesheets/typography/module";
 
 
 .TariffCard {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 150px 2fr;
+  //flex-direction: column;
   padding: 0;
   border-radius: 10px;
   background: #FFF;
@@ -16,34 +18,33 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  //min-height: 80px;
 }
 
 .TariffCard__header__title {
-  color: var(--mainBlack, #000000);
-  font-family: Inter, sans-serif;
+  @include inter-500;
   font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
   letter-spacing: 0.3px;
   text-align: left;
+  margin-bottom: 10px;
+}
+
+.TariffCard__icon {
+  height: 80px;
+  width: auto;
 }
 
 .TariffCard__text {
-  color: var(--mainBlack, #000000);
-  font-family: Inter, sans-serif;
+  //color: var(--mainBlack, #000000);
+  @include inter-400;
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.14px;
 }
 
 .TariffCard__body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr 100px;
   padding: 20px;
-  gap: 50px;
+  //gap: 50px;
 }
 
 .TariffCard__body__priceWrapper {
@@ -73,4 +74,42 @@
   line-height: normal;
   letter-spacing: 0.25px;
   text-decoration: line-through;
+}
+
+.featureHeader {
+  @include inter-500;
+  font-size: 20px;
+  color: var(--mainBlack, #000000);
+}
+
+.featureList {
+  @include inter-400;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  gap: 6px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  li::before {
+    display: inline-block;
+    content: " ";
+    width: 18px;
+    height: 18px;
+    background-image: url("img/png/mark.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.TariffCard__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

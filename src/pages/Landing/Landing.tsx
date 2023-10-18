@@ -7,6 +7,9 @@ import Man from "../../assets/img/svg/Man.svg?react";
 import time from "/img/png/carousel/time.png";
 import search from "/img/png/carousel/search.png";
 import guard from "/img/png/carousel/guard.png";
+import lamp from "/img/svg/tariffs/lamp.svg";
+import onion from "/img/svg/tariffs/onion.svg";
+import laptop from "/img/svg/tariffs/laptop.svg";
 import {CarouselLeftArrow, CarouselRightArrow} from "../../components/CarouselArrows/CarouselArrows.tsx";
 import {ITariff} from "../../data/types.ts";
 import TariffCard from "../../components/TariffCard/TariffCard.tsx";
@@ -19,15 +22,15 @@ export default function Landing() {
             items: 3
         },
         desktop: {
-            breakpoint: { max: 3000, min: 1024 },
+            breakpoint: { max: 3000, min: 1200 },
             items: 3
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 1,
+            breakpoint: { max: 1200, min: 960 },
+            items: 2,
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 960, min: 0 },
             items: 1
         }
     };
@@ -38,40 +41,40 @@ export default function Landing() {
             price: 799,
             oldPrice: 1200,
             creditCondition: "или 150 ₽/мес. при рассрочке на 24 мес.",
-            icon: time,
+            icon: lamp,
             color: "#FFB64F",
             features: [
-                "Фича 1",
-                "Фича 2",
-                "Фича 3",
+                "Безлимитная история запросов",
+                "Безопасная сделка",
+                "Поддержка 24/7",
             ]
         },
         {
             name: "Pro",
             description: "Для HR и фрилансеров",
-            price: 100,
-            oldPrice: 200,
+            price: 1299,
+            oldPrice: 2600,
             creditCondition: "Кредитная условия тарифа 2",
-            icon: search,
+            icon: onion,
             color: "#7CE3E1",
             features: [
-                "Фича 1",
-                "Фича 2",
-                "Фича 3",
+                "Все пункты тарифа Beginner",
+                "Экспорт истории",
+                "Рекомендации по приоритетам",
             ]
         },
         {
             name: "Business",
             description: "Для корпоративных клиентов",
-            price: 100,
-            oldPrice: 200,
+            price: 2379,
+            oldPrice: 3700,
             creditCondition: "Кредитная условия тарифа 3",
-            icon: guard,
+            icon: laptop,
             color: "#000000",
             features: [
-                "Фича 1",
-                "Фича 2",
-                "Фича 3",
+                "Все пункты тарифа Pro",
+                "Безлимитное количество запросов",
+                "Приоритетная поддержка",
             ]
         }
     ]
