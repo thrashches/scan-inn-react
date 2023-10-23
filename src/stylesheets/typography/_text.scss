@@ -73,3 +73,25 @@ h2 {
   @include text-large;
   @include ta-center;
 }
+
+.textSecondary {
+  @include text-secondary;
+}
+
+.header {
+  color: var(--mainBlack, #000000);
+  font-family: Ferry, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 960px) {
+  .header {
+    font-size: 60px;
+  }
+
+}
