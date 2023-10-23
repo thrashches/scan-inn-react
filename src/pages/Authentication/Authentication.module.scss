@@ -31,6 +31,7 @@
 }
 
 .Authentication__FormCard {
+  position: relative;
   @include d-flex;
   flex-direction: column;
   max-width: 450px;
@@ -39,6 +40,14 @@
   border-radius: 10px;
   background: #FFF;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.Lock {
+  position: absolute;
+  top: -55px;
+  left: -35px;
+  width: 70px;
+  height: auto;
 }
 
 .FormCard__tabs {
@@ -67,6 +76,9 @@
 }
 
 @media (max-width: 768px) {
+  .Authentication__FormCard__wrapper {
+    padding-top: 40px;
+  }
   .Authentication {
     grid-template-areas:  "header"
                            "form"
@@ -81,5 +93,12 @@
   .picture {
     width: 100%;
     height: auto;
+  }
+
+  .Lock {
+    width: 50px;
+    height: auto;
+    top: -50px;
+    left: 30px;
   }
 }

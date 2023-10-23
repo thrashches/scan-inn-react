@@ -1,6 +1,7 @@
 import styles from "./Authentication.module.scss";
 import LoginForm from "../../components/LoginForm/LoginForm.tsx";
 import Key from "../../assets/img/svg/Key.svg?react";
+import Lock from "../../assets/img/svg/Lock.svg?react";
 
 
 export default function Authentication() {
@@ -14,6 +15,7 @@ export default function Authentication() {
         </div>
         <div className={styles.Authentication__FormCard__wrapper}>
             <div className={styles.Authentication__FormCard}>
+                <Lock className={styles.Lock}/>
                 <div className={styles.FormCard__tabs}>
                     <div className={`${styles.FormCard__tabs__tab} ${styles.FormCard__tabs__tab__active}`}>Войти</div>
                     <div className={styles.FormCard__tabs__tab}>Зарегистрироваться</div>
