@@ -1,0 +1,22 @@
+@import "src/stylesheets/layout/module";
+@import "src/stylesheets/typography/module";
+
+.Search {
+  @include container;
+  padding: 40px 20px;
+}
+
+.Search__header {
+  @include d-flex;
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Document {
+  position: absolute;
+  top: 55px;
+  left: 75%;
+  width: 70px;
+  height: auto;
+}

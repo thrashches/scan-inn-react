@@ -7,6 +7,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import Authentication from "../../pages/Authentication/Authentication.tsx";
+import Search from "../../pages/Search/Search.tsx";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     {
         path: "authentication",
         element: <Authentication/>,
+    },
+    {
+        path: "search",
+        element: <Search/>,
     }
 ]);
 

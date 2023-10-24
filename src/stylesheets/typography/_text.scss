@@ -78,7 +78,12 @@ h2 {
   @include text-secondary;
 }
 
+.textRegular {
+  @include text-regular;
+}
+
 .header {
+  text-align: left;
   color: var(--mainBlack, #000000);
   font-family: Ferry, sans-serif;
   font-size: 28px;
@@ -92,6 +97,10 @@ h2 {
 @media (min-width: 960px) {
   .header {
     font-size: 60px;
+
+    &__secondary {
+      font-size: 40px;
+    }
   }
 
 }
