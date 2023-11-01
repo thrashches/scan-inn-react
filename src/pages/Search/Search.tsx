@@ -2,6 +2,8 @@ import styles from "./Search.module.scss";
 import Document from "../../assets/img/svg/Document.svg?react";
 import Folders from "../../assets/img/svg/Folders.svg?react";
 import Rocket from "../../assets/img/svg/Rocket.svg?react";
+import Input from "../../components/Input/Input.tsx";
+import Checkbox from "../../components/Checkbox/Checkbox.tsx";
 
 
 export default function Search () {
@@ -12,6 +14,45 @@ export default function Search () {
                 Чем больше заполните, тем точнее поиск</p>
             <Document className={styles.Document}/>
         </section>
-
+        <section className={styles.Search__body}>
+            <div className={styles.Search__card}>
+                <div className={styles.column}>
+                    <Input
+                        name={"inn"}
+                        label={"ИНН Компании *"}
+                        placeholder={"10 цифр"}
+                        onChange={()=>{}}
+                        type={"text"}
+                    />
+                    <Input
+                        name={"tone"}
+                        label={"Тональность"}
+                        placeholder={"Введите тональность"}
+                        onChange={()=>{}}
+                        type={"text"}
+                    />
+                    <Input
+                        name={"quantity"}
+                        label={"Количество документов в выдаче *"}
+                        placeholder={"От 1 до 1000"}
+                        onChange={()=>{}}
+                        type={"text"}
+                    />
+                </div>
+                <div className={styles.column}>
+                    <Checkbox name={"full"} label={"Признак максимальной полноты"}/>
+                    <Checkbox name={"full"} label={"Упоминания в бизнес-контексте"}/>
+                    <Checkbox name={"full"} label={"Главная роль в публикации"}/>
+                    <Checkbox name={"full"} label={"Публикации только с риск-факторами"}/>
+                    <Checkbox name={"full"} label={"Включать технические новости рынков"}/>
+                    <Checkbox name={"full"} label={"Включать анонсы и календари"}/>
+                    <Checkbox name={"full"} label={"Включать сводки новостей"}/>
+                </div>
+            </div>
+            <div>
+                <Folders className={styles.Folders}/>
+                <Rocket className={styles.Rocket}/>
+            </div>
+        </section>
     </div>
 }

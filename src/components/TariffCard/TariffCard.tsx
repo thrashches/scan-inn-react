@@ -24,7 +24,6 @@ const CurrentBadge = () => {
 export default function TariffCard(props: TariffCardProps) {
     const {tariff, current} = props;
     // console.log(calculateBrightness(tariff.color))
-
     return <div
         className={`${styles.TariffCard} ${current && styles.current}`}
         style={{
@@ -66,6 +65,7 @@ export default function TariffCard(props: TariffCardProps) {
                     ))}
                 </ul>
             </div>
+
             <div className={styles.TariffCard__footer}>
                 <Button text={"Подробнее"} onClick={() => {
                 }} color={"purple"}/>

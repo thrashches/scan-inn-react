@@ -20,3 +20,26 @@
   width: 70px;
   height: auto;
 }
+
+.Search__body {
+  margin-top: 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 5fr 300px;
+}
+
+.Search__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
