@@ -1,0 +1,26 @@
+@import "src/stylesheets/typography/module";
+
+.RangeInput {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  label {
+    @include text-secondary;
+    opacity: 1;
+  }
+}
+
+.RangeInput__inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .RangeInput__inputs {
+    flex-direction: column;
+  }
+}

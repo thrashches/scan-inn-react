@@ -1,0 +1,22 @@
+@import "../Input/Input.module";
+
+.Select {
+    position: relative;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    //background: url("/public/img/svg/arrow.svg") no-repeat;
+
+    &::after {
+        content: " ";
+        position: absolute;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        background: url("/public/img/svg/arrow.svg") no-repeat;
+        background-size: cover;
+        border: 3px solid transparent;
+        box-sizing: border-box;
+        transition: 0.2s;
+    }
+}

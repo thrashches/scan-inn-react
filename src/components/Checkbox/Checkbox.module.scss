@@ -1,12 +1,67 @@
 .Checkbox {
-  label {
-    color: #000;
-    font-family: Inter, sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.54px;
+
+}
+
+.Checkbox__label {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  color: #000;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: right;
+  letter-spacing: 0.54px;
+  margin-left: 6px;
+}
+
+.Checkbox__input {
+  display: none;
+}
+
+.Checkbox__fake {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  margin-right: 10px;
+  opacity: 0.4;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    background: url('/public/img/svg/check-box.svg') no-repeat;
+    opacity: 0;
+    background-size: cover;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    transition: 0.2s;
   }
 }
 
+.Checkbox__text {
+  opacity: 0.4;
+  transition: 0.2s;
+  text-align: right;
+}
+
+.Checkbox__input:checked+.Checkbox__fake::after {
+  opacity: 1;
+}
+
+.Checkbox__input:checked~span {
+  opacity: 1;
+}
+
+.Checkbox__input:checked+.Checkbox__text {
+  color: #1c448e;
+}

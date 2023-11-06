@@ -14,7 +14,7 @@ const calculateBrightness = (color: string) => {
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
-    return  (r * 299 + g * 587 + b * 114) / 1000;
+    return (r * 299 + g * 587 + b * 114) / 1000;
 };
 
 const CurrentBadge = () => {
@@ -27,15 +27,15 @@ export default function TariffCard(props: TariffCardProps) {
     return <div
         className={`${styles.TariffCard} ${current && styles.current}`}
         style={{
-            borderColor: current ? tariff.color: "none",
+            borderColor: current ? tariff.color : "none",
             borderStyle: current ? "solid" : "none",
         }}
     >
         <div className={styles.TariffCard__header}
-            style={{
-                backgroundColor: tariff.color,
-                color: calculateBrightness(tariff.color) > 130 ? "#000000" : "#ffffff"
-            }}
+             style={{
+                 backgroundColor: tariff.color,
+                 color: calculateBrightness(tariff.color) > 130 ? "#000000" : "#ffffff"
+             }}
         >
             <div>
                 <h3 className={styles.TariffCard__header__title}>{tariff.name}</h3>
@@ -67,8 +67,12 @@ export default function TariffCard(props: TariffCardProps) {
             </div>
 
             <div className={styles.TariffCard__footer}>
-                <Button text={"Подробнее"} onClick={() => {
-                }} color={"purple"}/>
+                <Button
+                    text={"Подробнее"} onClick={() => {
+                }}
+                    color={"purple"}
+                    wide
+                />
             </div>
         </div>
     </div>
