@@ -9,6 +9,9 @@ import {
 import Authentication from "../../pages/Authentication/Authentication.tsx";
 import Search from "../../pages/Search/Search.tsx";
 import SearchResults from "../../pages/SearchResults/SearchResults.tsx";
+import {Provider} from "react-redux";
+import store, {persistor} from "../../store";
+import {PersistGate} from "redux-persist/integration/react";
 
 
 const router = createBrowserRouter([
@@ -31,16 +34,20 @@ const router = createBrowserRouter([
 ]);
 
 
-export default function Layout () {
-    return <section className={styles.Layout}>
-        <header>
-            <Navbar/>
-        </header>
-        <main>
-            <RouterProvider router={router}/>
-        </main>
-        <footer>
-            <Footer/>
-        </footer>
-        </section>
+export default function Layout() {
+    return <Provider store={store}>
+        <PersistGate persistor={persistor} loading={null}>
+            <section className={styles.Layout}>
+                <header>
+                    <Navbar/>
+                </header>
+                <main>
+                    <RouterProvider router={router}/>
+                </main>
+                <footer>
+                    <Footer/>
+                </footer>
+            </section>
+        </PersistGate>
+    </Provider>
 }

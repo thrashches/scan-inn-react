@@ -1,6 +1,11 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
+export interface IToken {
+    accessToken: string,
+    expire: string,
+}
+
 export interface IUserInfo {
     "eventFiltersInfo": {
         "usedCompanyCount": number,
@@ -9,12 +14,15 @@ export interface IUserInfo {
 }
 
 export interface IAuthState {
-    accessToken: string;
+    token: IToken,
     userInfo: IUserInfo|null,
 }
 
 const initialState: IAuthState = {
-    accessToken: "",
+    token: {
+        accessToken: "",
+        expire: "",
+    },
     userInfo: null,
 }
 
@@ -22,8 +30,8 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        setAccessToken: (state, action: PayloadAction<string>) => {
-            state.accessToken = action.payload
+        setToken: (state, action: PayloadAction<IToken>) => {
+            state.token = action.payload
         },
         setUserInfo: (state, action: PayloadAction<IUserInfo|null>) => {
             state.userInfo = action.payload
@@ -33,4 +41,4 @@ const authSlice = createSlice({
 
 export default authSlice.reducer;
 
-export const {setAccessToken, setUserInfo} = authSlice.actions;
+export const {setToken, setUserInfo} = authSlice.actions;
