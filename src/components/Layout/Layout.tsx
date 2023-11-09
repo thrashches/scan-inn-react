@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Authentication from "../../pages/Authentication/Authentication.tsx";
 import Search from "../../pages/Search/Search.tsx";
+import SearchResults from "../../pages/SearchResults/SearchResults.tsx";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     {
         path: "search",
         element: <Search/>,
+    },
+    {
+        path: "search-results",
+        element: <SearchResults/>,
     }
 ]);
 

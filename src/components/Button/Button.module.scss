@@ -25,12 +25,17 @@
     background: var(--gray, #6f8695);
     color: var(--mainBlack, #000000);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 @media (min-width: 768px) {
-  .Button:hover {
-      background: var(--secondaryOrange, #ffb64f);
-      color: var(--mainBlack, #000000);
-      transition: 250ms;
+  .Button:hover:enabled {
+    background: var(--secondaryOrange, #ffb64f);
+    color: var(--mainBlack, #000000);
+    transition: 250ms;
   }
 }

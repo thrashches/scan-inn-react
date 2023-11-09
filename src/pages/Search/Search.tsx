@@ -85,7 +85,6 @@ export default function Search() {
                         <span className={styles.textSecondary}>* Обязательные к заполнению поля</span>
                     </div>
                 </div>
-
             </div>
             <div
                 style={{
