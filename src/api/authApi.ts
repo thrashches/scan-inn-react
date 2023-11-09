@@ -1,5 +1,4 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query";
-import {EndpointBuilder} from "@reduxjs/toolkit/dist/query/endpointDefinitions";
 
 
 export const authApi = createApi({
@@ -8,6 +7,7 @@ export const authApi = createApi({
             baseUrl: 'https://gateway.scan-interfax.ru/api/v1/account/'
         }
     ),
-    endpoints: (builder)=> {
-    }
+    endpoints: (builder)=> ({
+        login: builder.mutation()
+    })
 })
