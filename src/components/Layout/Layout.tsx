@@ -1,53 +1,20 @@
 import styles from "./Layout.module.scss";
 import Navbar from "../Navbar/Navbar.tsx";
 import Footer from "../Footer/Footer.tsx";
-import Landing from "../../pages/Landing/Landing.tsx";
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-import Authentication from "../../pages/Authentication/Authentication.tsx";
-import Search from "../../pages/Search/Search.tsx";
-import SearchResults from "../../pages/SearchResults/SearchResults.tsx";
-import {Provider} from "react-redux";
-import store, {persistor} from "../../store";
-import {PersistGate} from "redux-persist/integration/react";
 
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Landing/>,
-    },
-    {
-        path: "authentication",
-        element: <Authentication/>,
-    },
-    {
-        path: "search",
-        element: <Search/>,
-    },
-    {
-        path: "search-results",
-        element: <SearchResults/>,
-    }
-]);
+import {Outlet} from "react-router-dom";
 
 
 export default function Layout() {
-    return <Provider store={store}>
-        <PersistGate persistor={persistor} loading={null}>
-            <section className={styles.Layout}>
-                <header>
-                    <Navbar/>
-                </header>
-                <main>
-                    <RouterProvider router={router}/>
-                </main>
-                <footer>
-                    <Footer/>
-                </footer>
-            </section>
-        </PersistGate>
-    </Provider>
+    return <section className={styles.Layout}>
+        <header>
+            <Navbar/>
+        </header>
+        <main>
+            <Outlet/>
+        </main>
+        <footer>
+            <Footer/>
+        </footer>
+    </section>
 }
